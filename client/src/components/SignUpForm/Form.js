@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { checkPassword, validateEmail } from "../../utils/helpers.js";
 import "./style.css";
 
@@ -7,7 +7,7 @@ function Form() {
   const [email, setEmail] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  // const [confirmPass, setConfirmPass] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
@@ -19,10 +19,10 @@ function Form() {
       setEmail(inputValue);
     } else if (inputType === 'userName') {
       setUserName(inputValue);
-    } else {
+    } else if (inputType === 'password') {
       setPassword(inputValue);
-    // } else {
-    //   setConfirmPass(inputValue);
+    } else {
+      setConfirmPass(inputValue);
     }
   };
 
@@ -48,7 +48,7 @@ function Form() {
   
   return (
     <div>
-      {/* <p>Hello {userName}</p> */}
+      <p>Hello, please sign up to be able to leave reviews of trails!</p>
       <form className="form">
         <input
           value={email}
@@ -71,13 +71,13 @@ function Form() {
           type="password"
           placeholder="Password"
         />
-        {/* <input 
+        <input 
           value={confirmPass}
           name="confirmPass"
           onChange={handleInputChange}
           type="confirmPass"
           placeholder="Confirm Password"
-        /> */}
+        />
         <button type="button" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage && (

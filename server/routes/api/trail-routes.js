@@ -1,11 +1,11 @@
-// const router = require('express').Router();
+const router = require('express').Router();
 
-// // Import any controllers needed here
-// const { createUser, getAllUsers, getOneUser } = require('../../controllers/user-controllers');
+// Import any controllers needed here
+const { createTrail, getAllTrails, getOneTrail } = require('../../controllers/trail-controllers');
 
-// // Declare the routes that point to the controllers above
-// router.route('/').post(createUser);
-// router.route('/').get(getAllUsers)
-// router.route('/:id').post(getOneUser);
+// Declare the routes that point to the controllers above
+router.route('/').post(createTrail);
+router.route('/').get(getAllTrails)
+router.route('/:id').get(getOneTrail);
 
-// module.exports = router;
+module.exports = router;

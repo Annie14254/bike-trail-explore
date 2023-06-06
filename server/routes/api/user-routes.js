@@ -6,6 +6,6 @@ const { createUser, getAllUsers, getOneUser } = require('../../controllers/user-
 // Declare the routes that point to the controllers above
 router.route('/').post(createUser);
 router.route('/').get(getAllUsers)
-router.route('/:id').post(getOneUser);
+router.route('/:id').get(getOneUser);
 
 module.exports = router;

@@ -10,4 +10,4 @@ router.route('/:id').get(getOneUser);
 router.route('/auth').post(authUser);
 router.route('/verify').post(verifyUser);
 
-module.exports = router;
+module.exports = router;    

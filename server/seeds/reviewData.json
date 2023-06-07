@@ -1,0 +1,14 @@
+[
+    {
+        "reviewText": "Example1",
+        "createdAt": "May 1, 2023"
+    },
+    {
+        "reviewText": "Example2",
+        "createdAt": "Jun 4, 2023"
+    },  
+    {
+        "reviewText": "Example3",
+        "createdAt": "June 6, 2023"
+    }
+]

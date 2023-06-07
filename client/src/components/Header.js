@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import "../styles/Header.css";
+import { AiOutlineMenu } from "react-icons/ai";
 
-function Header() {
+export default function Header() {
+  const [dropNav, setDropNav] = useState(false);
+  
+  useEffect(() => {
+    setDropNav(false);
+  }, []);
+
   return (
-    <div>
-      Header
-    </div>
-  )
-}
+    <div className="navbar" id={dropNav ? "open" : "close"}>
+      <div className="toggleButton">
+        <button onClick={() => {setDropNav((prev) => !prev)}}> 
+          <AiOutlineMenu /> 
+        </button>
+      </div>
 
-export default Header
+      <div className="links">
+        
+        <a href={`/`} id="name" >Home</a>
+        <a href={`/maps`} className="navs">Trail</a>
+        <a href={`/profile`} className="navs">Profile</a>
+        <a href={`/signup`} className="navs">Sign Up</a>
+        <a href={`/login`} className="navs">Log In</a>
+
+      </div>
+    </div>
+  )  
+}

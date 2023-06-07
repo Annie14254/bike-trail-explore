@@ -3,7 +3,6 @@ const Trail = require("../models/Trail");
 const db = require("../config/connection").mongoURI;
 const fetch = require("node-fetch");
 
-
 let resultData;
 let saveCounter = 0;
 mongoose.connect(db)

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// Need to import from seperate .css file and import this form to LogIn.js
+import '../../styles/LogIn.css'
 
 function App() {
     const [username, setUsername] = useState('');

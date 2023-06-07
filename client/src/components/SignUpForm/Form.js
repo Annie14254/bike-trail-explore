@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { checkPassword, validateEmail } from "../../utils/helpers.js";
-import "./style.css";
+import "../../styles/SignUp.css";
 
 
 function Form() {
@@ -35,10 +35,15 @@ function Form() {
     }
     if (!checkPassword(password)) {
       setErrorMessage(
-        `Choose a more secure password for the account: ${userName}`
+        `Please choose a password 7-14 characters long with no special characters ($, @, &, etc.)`
       );
       return;
     }
+    if (confirmPass !== password) {
+      setErrorMessage("Passwords do not match")
+      return;
+    }
+
 
     setUserName('');
     setPassword('');
@@ -48,7 +53,7 @@ function Form() {
   
   return (
     <div>
-      <p>Hello, please sign up to be able to leave reviews of trails!</p>
+      <p>Hello, please sign up to be able to leave reviews and comments on trails!</p>
       <form className="form">
         <input
           value={email}
@@ -69,14 +74,14 @@ function Form() {
           name="password"
           onChange={handleInputChange}
           type="password"
-          placeholder="Password"
+          placeholder="password"
         />
         <input 
           value={confirmPass}
           name="confirmPass"
           onChange={handleInputChange}
           type="confirmPass"
-          placeholder="Confirm Password"
+          placeholder="confirm password"
         />
         <button type="button" onClick={handleFormSubmit}>Submit</button>
       </form>

@@ -1,4 +1,21 @@
 import React from 'react'
+import MyMap from '../components/MyMap'
+import mapData from '../components/MapData'
+
+// <div>
+// <h1>Home Page</h1>  
+// <div id = "mapDisplay">
+  
+//   <div>
+//     {mapData.map(mapDatum => {
+//       return(
+//         <div>
+//           <MyMap mapDatum={mapDatum}/>
+//         </div>
+//       )
+//     })}
+//   </div>     
+
 import "../styles/Home.css";
 import Container from "react-bootstrap/Container"
 import Card from "react-bootstrap/Card"
@@ -25,7 +42,7 @@ function Home() {
       </div>
     </header>
 
-      <Container className='mx-auto my-3 p-3 card-group d-flex gap-2'>
+      {/* <Container className='mx-auto my-3 p-3 card-group d-flex gap-2'>
         <Card className='card rounded border-0'>
           <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
           <Card.Body>
@@ -67,17 +84,18 @@ function Home() {
           </Card.Footer>
         </Card>
       </Container>
+ */}
 
-// import MyMap from '../components/MyMap'
+      <div>
+      {mapData.map(mapDatum => {
+        return(
+          <div>
+            <MyMap mapDatum={mapDatum}/>
+          </div>
+        )
+      })}
+      </div> 
 
-// function Home() {
-//   return (
-//     <div>
-//       <h1>Home Page</h1>  
-//       <div id = "mapDisplay">
-
-//       <MyMap lat="3.21" lon="1.23" polyline="c|gtGbrt_QnzoAcpwDpgtAz~eBm{u@ra{@nnyZddwBht|Oyr~xAnqv]amteFnjtMo`waHbj_aByz}bC`crnAldfdDv|aO~nohDxhtuCnhnc@ndmJ}citD"/>
-//       </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { useEffect } from 'React'
+import { useEffect } from 'react'
 
 const MyMap = (props) => {
   // use state whatnot-ery

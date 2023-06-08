@@ -42,7 +42,7 @@ function Home() {
       </div>
     </header>
 
-      <Container className='mx-auto my-3 p-3 card-group d-flex gap-2'>
+      {/* <Container className='mx-auto my-3 p-3 card-group d-flex gap-2'>
         <Card className='card rounded border-0'>
           <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
           <Card.Body>
@@ -84,7 +84,17 @@ function Home() {
           </Card.Footer>
         </Card>
       </Container>
+ */}
 
+      <div>
+      {mapData.map(mapDatum => {
+        return(
+          <div>
+            <MyMap mapDatum={mapDatum}/>
+          </div>
+        )
+      })}
+      </div> 
 
     </div>
   )

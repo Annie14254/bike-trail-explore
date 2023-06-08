@@ -1,12 +1,17 @@
 import React from 'react';
 import { Container, Image, Card, Row, Col } from 'react-bootstrap';
+import MyMap from '../components/MyMap'
+import mapData from '../components/MapData'
+import "../styles/Home.css";
 
-const LandingPage = () => {
+
+const Home = () => {
   return (
     <div>
       <div className="hero">
         <Image src="https://fakeimg.pl/1920x400" fluid />
       </div>
+    
       
       <Container>
         <Row className='gy-3'>
@@ -108,8 +113,21 @@ const LandingPage = () => {
           </Col>
         </Row>
       </Container>
+
+
+
+      <div>
+      {mapData.map(mapDatum => {
+        return(
+          <div>
+            <MyMap mapDatum={mapDatum}/>
+          </div>
+        )
+      })}
+      </div> 
     </div>
   );
 };
 
-export default LandingPage;
+
+export default Home;

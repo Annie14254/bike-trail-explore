@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
+var mapDisplay = document.getElementById("mapDisplay")
 
 const MyMap = (props) => {
-  // use state whatnot-ery
+  // maybe: set every prop in URL
+  // const [imgSrc, setImgSrc] = useState("")
 
   useEffect(() => {
-    // Make your API call
+    
   }, [])
 
   return (
@@ -13,6 +15,7 @@ const MyMap = (props) => {
     <p>Map goes here</p>
     <p>{props.lat}</p>
     <p>{props.lon}</p>
+    <img src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&center=${props.lat},${props.lat}&zoom=6&path=weight:3%7Ccolor:black%7Cenc:${props.polyline}&key=AIzaSyDjUvypn2RUsTLSqsK6kOXCuA--8gSQOEc`}/>
     </>
   )
 }

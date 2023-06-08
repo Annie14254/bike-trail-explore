@@ -5,20 +5,20 @@ const trailSchema = new Schema({
       type: String,
       required: true
    },
-   address: {
-      type: String,
-   },
    description: {
       type: String,
    },
-   location: {
-      type: {
-         type: String,
-         enum: ['Point'],
-      },
-      coordinates: {
-         type: [Number],
-      }
+   lat: {
+      type: Number,
+      required: true
+   },
+   lon: {
+      type: Number,
+      required: true
+   },
+   polyline: {
+      type: String,
+      required: true
    },
 });
 

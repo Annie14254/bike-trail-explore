@@ -48,18 +48,19 @@ function Form() {
     setUserName('');
     setPassword('');
     setEmail('');
+    setConfirmPass('');
   };
   
   
   return (
-    <div>
-      <p>Hello, please sign up to be able to leave reviews and comments on trails!</p>
+    <div className="container">
+      <p className="title">Welcome to Ride Guide, please sign up to be able to leave reviews and comments on trails!</p>
       <form className="form">
         <input
           value={email}
           name="email"
           onChange={handleInputChange}
-          type="email"
+          type="text"
           placeholder="email"
         />
         <input
@@ -80,7 +81,7 @@ function Form() {
           value={confirmPass}
           name="confirmPass"
           onChange={handleInputChange}
-          type="confirmPass"
+          type="password"
           placeholder="confirm password"
         />
         <button type="button" onClick={handleFormSubmit}>Submit</button>

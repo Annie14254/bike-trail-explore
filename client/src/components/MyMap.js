@@ -12,10 +12,7 @@ const MyMap = (props) => {
   return (
     // The actual viewable map
     <>
-    <p>Map goes here</p>
-    <p>{props.lat}</p>
-    <p>{props.lon}</p>
-    <img src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&center=${props.lat},${props.lat}&zoom=6&path=weight:3%7Ccolor:black%7Cenc:${props.polyline}&key=AIzaSyDjUvypn2RUsTLSqsK6kOXCuA--8gSQOEc`}/>
+    <img src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&center=${props.mapDatum.lat},${props.mapDatum.lon}&zoom=12 &path=weight:3%7Ccolor:red%7Cenc:${props.mapDatum.polyline}&key=AIzaSyDjUvypn2RUsTLSqsK6kOXCuA--8gSQOEc`}/>
     </>
   )
 }

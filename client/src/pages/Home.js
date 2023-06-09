@@ -118,7 +118,7 @@ const Home = () => {
       <Container>
         <Row className='gy-3'>
 
-          <div>
+          {/* <div>
           {mapData.map(mapDatum => {
             return(
               <div>
@@ -126,7 +126,8 @@ const Home = () => {
               </div>
             )
           })}
-          </div> 
+          </div>  */}
+          <MyMap/>
         </Row>
       </Container>
     </div>

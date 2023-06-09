@@ -1,40 +1,56 @@
 [
     {
+        "name": "Bobsled",
+        "description": "This trail begins with a climb that could be challenging for the first time rider. With the climb behind you, there is an option to cut straight to the adrenaline filled berms. Take the longer route around and you'll roll over piles of rock. Once your speed picks up, enjoy your ride down!",
         "lat": 44.991803,
         "lon":  -93.309449,
         "polyline": "miuqGnymxP`Edn@dQ~MbH|ZvX?vR?aEglApFeP`E_N?oc@uOwI_k@_NwXiRmA|k@dCln@k@lF"
     },
     {
+        "name": "Sidewinder",
+        "description": "Sidewinder provides almost 20 miles of technical desert singletrack and numerous slickrock sections. The access roads allow you to bite off only as much as you want. There are a few fast/flowy sections and a lot of technical moves to keep you on your toes. The trail is a blast, but don't forget to stop once in a while to enjoy the amazing views.",
         "lat": 44.742438,
         "lon": -93.705171,
         "polyline": "mlgpG~|b{PzHwsAze@ojCxu@kDx_AfQrv@ip@fNd_@e[~oDoMvg@gnBhCgnAlT"
     },
     {
+        "name": "Miner's Mountain",
+        "description": "Trail is wide but still features some fun ups and downs. Trail also has cool replica buildings that pay homage to area's mining past with info signs, which make great pit stops for younger riders.",
         "lat": 44.761876, 
         "lon": -93.352074,
         "polyline": "q|hpGbutxPdCeXtAmTjJvBfFQv_@a@hLQsF`NaEfQVrHmExCkTiDsYlEaB`@"
     },
     {
+        "name": "Sledgehammer",
+        "description": "Double Black Diamond Trail. Extremely technical flow/jump line with massive drops and jumps, long chunky rock gardens and high speed berms.",
         "lat": 45.261542, 
         "lon": -93.067679,
         "polyline": "{~gsGt||vPgQui@fRi_Axp@w|@ja@`GtGb^vMaG{Knc@qWx{ApChcBdIhh@os@ka@oTytAuD{K"
     },
     {
+        "name": "Morningside",
+        "description": "This section yields little elevation change overall, but rolls nicely all the way along. It has more of a 'deep woods' feeling to it: no panoramic viewpoints overlooking the city or lake and no rocky ledges. Instead, the track meanders through pine and maple forests on the east side, aspen and oak forests near the middle, and lower wetland shrubs on the west end where it skirts a beaver pond along Amity Creek.",
         "lat": 45.168000, 
         "lon": -93.224096,
         "polyline": "{msrGnk`xPXs{@Vae@oHcHmYcHaHqG}@lq@o@ncC?jx@"
     },
     {
+        "name": "Stone Age",
+        "description": "The terrain is meant to be challenging for advanced riders. The experience of riding it is 100% engagement and focus on the trail because the whole thing is very challenging. Very technical, rocky, hand-built, old school singletrack with punchy climbs and ripping descents.",
         "lat": 45.179443, 
         "lon": -93.315165,
         "polyline": "kivrGrmnxPsOse@eT?}C`e@sDxh@qFb^tGbWlHq@vP{h@lEwQbNiY"
     },
     {
+        "name": "Hillside",
+        "description": "This is a fun trail. Plain and simple. Over 7 miles of fun singletrack. Challenging, twisting and exciting. The trail is a singletrack loop that doesn't have many spurs, or crossings, so getting lost isn't a problem.",
         "lat": 45.2992386,
         "lon": -93.5409021,
         "polyline": "knosGhq{yPtJxCvB`GzGbAvF{@xEFuAtLP~IbGGnAgBGiRjCj@hC?jF`@yD|PnFlAtD}ADqN"
     },
     {
+        "name": "Candyland",
+        "description": "Downhill only. Coming off the lift, turn left to drop down Wrecking Ball (Black diamond / Advanced) or to keep it easier turn right and head down the ski run on the doubletrack. If you are coming down the doubletrack, take the first right. Watch out on your right for riders dropping out of Wrecking Ball! Ride uphill along the Adventure Park lot, the start of the trail is just before the road gate, on your left.",
         "lat": 45.013842, 
         "lon": -93.137153,
         "polyline": "ynuqGbtowPv`@dAhWsGmB`iAn@lj@vGdIuLlEca@{Dyc@bAhDa{@uDgv@tLyJ"

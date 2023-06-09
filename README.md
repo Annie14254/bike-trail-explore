@@ -15,7 +15,7 @@
 - Annie, Peter, Tyler, Nawal, Alex, & Linkin
 
 ## Link to deployed application
-- 
+- https://bike-trail-explore-grp-1.herokuapp.com/
 
 ## Screenshots of webpage
 ![Screenshot of home page]()

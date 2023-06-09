@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import "../styles/Home.css";
@@ -26,6 +26,8 @@ var allTrails = [];
 // }, []);
 
 const MyMap = (props) => {
+
+  const [ trailsList, setTrailsList ] = useState([])
   // maybe: set every prop in URL
   // const [imgSrc, setImgSrc] = useState("")
   
@@ -37,32 +39,37 @@ const MyMap = (props) => {
     })
     .then(data =>{
       console.log(data)
-      allTrails.push(data)
+      setTrailsList(data.allTrails)
     })
     .catch(err => console.log(err.message))
   }
+
+  useEffect(() => {
+    console.log(trailsList)
+  }, [trailsList])
  
 
   useEffect(() => {
     fetchTrails()
   }, [])
 
-    allTrails.map(trail => {
+
       return(
         // The actual viewable map
-        <Col>
-            <Card md={3}>
+        <Col md={3}>
+         { trailsList.map( trail => (
+            <Card key={trail._id}>
               <Card.Img variant="top" src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&center=${trail.lat},${trail.lon}&zoom=12 &path=weight:3%7Ccolor:red%7Cenc:${trail.polyline}&key=AIzaSyDjUvypn2RUsTLSqsK6kOXCuA--8gSQOEc`} />
               <Card.Body>
-                <Card.Title>Card 1</Card.Title>
+                <Card.Title>{trail.name}</Card.Title>
                 <Card.Text>
-                  This is a sample card with some example content.
+                  {trail.description}
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+         ))}
+        </Col>
       )
-    })
 
 
     

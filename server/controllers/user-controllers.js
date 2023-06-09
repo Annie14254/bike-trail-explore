@@ -10,7 +10,7 @@ module.exports = {
             return res.status(400).json({message: "Could not create new user"})
         }
         console.log(newUser)
-        res.status(200).json(sample)
+        res.status(200).json({ status: "success", payload: newUser })
     },
 
     async getAllUsers(req,res) {

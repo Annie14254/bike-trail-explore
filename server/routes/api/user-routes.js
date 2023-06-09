@@ -5,7 +5,7 @@ const router = require('express').Router();
 const { createUser, getAllUsers, getOneUser, authUser, verifyUser, updateUser, deleteUser } = require('../../controllers/user-controllers');
 
 // Declare the user routes that point to the controllers above
-router.route('/').post(createUser);
+router.route('/create-user').post(createUser);
 router.route('/').get(getAllUsers)
 router.route('/:id').get(getOneUser);
 router.route('/auth').post(authUser);

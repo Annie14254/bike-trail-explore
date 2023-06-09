@@ -12,7 +12,7 @@ const Home = () => {
         <Image src="https://fakeimg.pl/1920x400" fluid />
       </div>
     
-      
+{/*       
       <Container>
         <Row className='gy-3'>
           <Col md={3}>
@@ -25,9 +25,9 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Example for Card 2 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -37,10 +37,10 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Repeat the Card component for the remaining 2 cards */}
           {/* Example for Card 3 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -50,9 +50,9 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Example for Card 4 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -62,9 +62,9 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Example for Card 4 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -74,9 +74,9 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Example for Card 4 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -86,9 +86,9 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Example for Card 4 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -98,9 +98,9 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </Col> */}
           {/* Example for Card 4 */}
-          <Col md={3}>
+          {/* <Col md={3}>
             <Card>
               <Card.Img variant="top" src="https://fakeimg.pl/400x400" />
               <Card.Body>
@@ -112,19 +112,23 @@ const Home = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
 
 
+      <Container>
+        <Row className='gy-3'>
 
-      <div>
-      {mapData.map(mapDatum => {
-        return(
           <div>
-            <MyMap mapDatum={mapDatum}/>
-          </div>
-        )
-      })}
-      </div> 
+          {mapData.map(mapDatum => {
+            return(
+              <div>
+                <MyMap mapDatum={mapDatum}/>
+              </div>
+            )
+          })}
+          </div> 
+        </Row>
+      </Container>
     </div>
   );
 };

@@ -1,0 +1,18 @@
+#container {
+    border:1px solid black;
+    /* margin: 0ps -25% -25% -25%; */
+    margin:6rem;
+}
+textarea {
+    width:80%;
+    height:3rem;
+}
+#loginButton {
+    margin-bottom:3rem;
+    background-color: blue;
+    border-color: black;
+    border-radius:15px;
+    color:white;
+    padding:20px 30px;
+    font-weight:bold;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./profile.css">
+    <title>User Profile</title>
+</head>
+<body>
+    <main id="top row">
+        <div class="col-sm-6 left">
+            <h2 id="username">UserName</h2>
+            <h3 id="email">Email</h3>
+            <h3 id="location">Location</h3>
+            <button id="updateuserinfo" onclick="updateButton()">Update User Information</button>
+        </div>
+        <div class="col-sm-6 right">
+            <!-- <center><h2>A Little About Me</h2></center>
+            <center><textarea name="" placeholder="" id="userInfo" cols="30" rows="10"></textarea></center> -->
+            <center><img class="userPic" src="./images/DL2.jpg" id="profile-pic" alt="Place Your Profile Picture Here">
+            <input class="form-input" type="file" accept="image/jpeg, image/png, image/jpg" id="input-file"></center>
+        </div>
+        <div class="bottom"></div>
+    </main>
+
+    <!-- <article class="favoritetrails row">
+       <div class="col-sm-8">
+        <Container>
+            <Row className='gy-3'>
+    
+              <div>
+              {mapData.map(mapDatum => {
+                return(
+                  <div>
+                    <MyMap mapDatum={mapDatum}/>
+                  </div>
+                )
+              })}
+              </div> 
+            </Row>
+          </Container>
+           
+       </div>
+       <div class="col-sm-4">
+            <div class="">
+                <ul>
+                    <h2>Previous Trails</h2>
+                    <li>Oregon Trail</li>
+                    <li>Trail Snacks</li>
+                    <li>That one Trail in Idaho</li>
+                </ul>
+            </div>
+       </div>
+    </article> -->
+    <article>
+        <img src="./fillerbicyclist.jpeg" class="fillerImg" alt="free background img of a cyclist at dusk">
+    </article>
+    <footer>
+        <center>
+          <div className="footer">
+            <br />
+            <h4>Made by:</h4>
+            <h4>Annie, &nbsp; Alex,&nbsp; Peter,&nbsp; Linkin,&nbsp; Nawal,&nbsp; and&nbsp; Tyler</h4>
+            <br />
+          </div>
+        </center>
+      </footer>
+    <script>
+        let profilePic = document.getElementById("profile-pic");
+        let inputFile = document.getElementById("input-file");
+    
+        inputFile.onchange = function() {
+            profilePic.src = URL.createObjectURL(inputFile.files[0])
+        }
+      </script>
+
+</body>
+</html>

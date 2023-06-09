@@ -15,13 +15,13 @@ module.exports = {
 
     async getAllTrails(req, res) {
         const allTrails = await Trail.find({});
-
+        console.log(allTrails)
         if(!allTrails){
             console.log(err)
             return res.status(400).json({message: "No trails found"});
         }
         console.log(allTrails)
-        res.status(200).json(allTrails)
+        res.status(200).json({allTrails})
     },
 
     async getOneTrail({params}, res){

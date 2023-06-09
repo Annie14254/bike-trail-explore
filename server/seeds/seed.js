@@ -1,67 +1,90 @@
 const mongoose = require("mongoose");
-const Trail = require("../models/Trail");
-const db = require("../config/connection").mongoURI;
+// const Trail = require("../models/Trail");
+const db = require("../config/connection");
 const fetch = require("node-fetch");
-var StravaApiV3 = require('strava_api_v3');
+const { User, Review, Trail } = require('../models');
+const trailSeeds = require('./trailData.json');
+const reviewSeeds = require('./reviewData.json');
+const userSeeds = require('./userData.json')
+// var StravaApiV3 = require('strava_api_v3');
 
-let resultData;
-let saveCounter = 0;
-mongoose.connect(db)
+// let resultData;
+// let saveCounter = 0;
+// mongoose.connect(db)
 
-.then(() => console.log("mongodb connection success"))
-.catch(error => console.log(error));
-const url = ['https://data.cityofnewyork.us/resource/pvvr-75zk.json']
-url.map(async url => {
-try{
-   const response = await fetch(url);
-   const json = await response.json();
-   resultData = [...json];
-   for (let i = 0; i < resultData.length; i++) {
-      let trail = new Trail({
-         name: resultData[i].name,
-         description: resultData[i].status,
-         location: { coordinates:      [resultData[i].polygon.coordinates[0][0][1] , resultData[i].polygon.coordinates[0][0][0]]}
-      })
-   trail.save(() => {
-      console.log("saved" + trail)
-      
-      saveCounter++;
-  
-      if (saveCounter === resultData.length) {
-         mongoose.disconnect()
-         .then(() => console.log("saved succesfully and mongodb disconnected"))
-         .catch(error => console.log(error));
-         }
-      });
+db.once('open', async () => {
+   try {
+     await Trail.deleteMany({});
+     await Trail.create(trailSeeds);
+
+     await Review.deleteMany({});
+     await Review.create(reviewSeeds)
+
+     await User.deleteMany({});
+     await User.create(userSeeds)
+ 
+     console.log('all done!');
+     process.exit(0);
+   } catch (err) {
+     throw err;
    }
-} catch (error) {
-   console.log(error);
-}
-})
+ });
+ 
+
+// .then(() => console.log("mongodb connection success"))
+// .catch(error => console.log(error));
+// const url = ['https://data.cityofnewyork.us/resource/pvvr-75zk.json']
+// url.map(async url => {
+// try{
+//    const response = await fetch(url);
+//    const json = await response.json();
+//    resultData = [...json];
+//    for (let i = 0; i < resultData.length; i++) {
+//       let trail = new Trail({
+//          name: resultData[i].name,
+//          description: resultData[i].status,
+//          location: { coordinates:      [resultData[i].polygon.coordinates[0][0][1] , resultData[i].polygon.coordinates[0][0][0]]}
+//       })
+//    trail.save(() => {
+//       console.log("saved" + trail)
+      
+//       saveCounter++;
+  
+//       if (saveCounter === resultData.length) {
+//          mongoose.disconnect()
+//          .then(() => console.log("saved succesfully and mongodb disconnected"))
+//          .catch(error => console.log(error));
+//          }
+//       });
+//    }
+// } catch (error) {
+//    console.log(error);
+// }
+// })
 
 
-var defaultClient = StravaApiV3.ApiClient.instance;
+// var defaultClient = StravaApiV3.ApiClient.instance;
 
-// Configure OAuth2 access token for authorization: strava_oauth
-var strava_oauth = defaultClient.authentications['strava_oauth'];
-strava_oauth.accessToken = "23056b86f67625ae9f162e85ac8f16260ba668a5"
+// // Configure OAuth2 access token for authorization: strava_oauth
+// var strava_oauth = defaultClient.authentications['strava_oauth'];
+// strava_oauth.accessToken = "23056b86f67625ae9f162e85ac8f16260ba668a5"
 
-var api = new StravaApiV3.ActivitiesApi()
+// var api = new StravaApiV3.ActivitiesApi()
 
-var id = 789; // {Long} The identifier of the activity.
+// var id = 789; // {Long} The identifier of the activity.
 
-var opts = { 
-  'includeAllEfforts': true // {Boolean} To include all segments efforts.
-};
+// var opts = { 
+//   'includeAllEfforts': true // {Boolean} To include all segments efforts.
+// };
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.getActivityById(id, opts, callback);
+// var callback = function(error, data, response) {
+//   if (error) {
+//     console.error(error);
+//   } else {
+//     console.log('API called successfully. Returned data: ' + data);
+//   }
+// };
+// api.getActivityById(id, opts, callback);
 
 // https://maps.googleapis.com/maps/api/staticmap
 // ?size=400x400&center=${lat},${lon}&zoom=4

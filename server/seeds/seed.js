@@ -5,6 +5,7 @@ const fetch = require("node-fetch");
 const { User, Review, Trail } = require('../models');
 const trailSeeds = require('./trailData.json');
 const reviewSeeds = require('./reviewData.json');
+const userSeeds = require('./userData.json')
 // var StravaApiV3 = require('strava_api_v3');
 
 // let resultData;
@@ -18,6 +19,9 @@ db.once('open', async () => {
 
      await Review.deleteMany({});
      await Review.create(reviewSeeds)
+
+     await User.deleteMany({});
+     await User.create(userSeeds)
  
      console.log('all done!');
      process.exit(0);

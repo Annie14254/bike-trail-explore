@@ -5,12 +5,17 @@ import "../styles/Home.css";
 
 
 
+
 const MyMap = (props) => {
   // maybe: set every prop in URL
   // const [imgSrc, setImgSrc] = useState("")
 
+  
+
   useEffect(() => {
-    
+     fetch('/api/trail')
+      .then((response)=> response.json())
+      .then((data)=> console.log(data))
   }, [])
 
   return (

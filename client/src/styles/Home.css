@@ -31,8 +31,8 @@
   object-fit: cover;
   min-height: 400px;
   max-height: 400px;
-  min-width: 1920px;
-  max-width: 1920px;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 

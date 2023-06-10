@@ -4,6 +4,8 @@ import '../../styles/LogIn.css'
 function App() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
   
     const handleUsernameChange = (e) => {
       setUsername(e.target.value);
@@ -17,9 +19,10 @@ function App() {
       e.preventDefault();
   
       if (username === 'admin' && password === 'password') {
-        alert('Login successful!');
+        setErrorMessage("Login Successful!");
       } else {
-        alert('Invalid username or password. Please try again.');
+        // alert('Invalid username or password. Please try again.');
+        setErrorMessage('Invalid username or password. Please try again.')
       }
     };
   
@@ -43,6 +46,11 @@ function App() {
           />
           <button type="submit">Login</button>
         </form>
+        {errorMessage && (
+        <div>
+          <p className="error-text">{errorMessage}</p>
+        </div>
+        )}
       </div>
     );
   }

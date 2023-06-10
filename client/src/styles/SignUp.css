@@ -11,6 +11,8 @@
 
 .form {
   margin: 20px;
+  margin-left:500px;
+  min-width: 700px
 }
 
 .form input {

@@ -11,7 +11,10 @@ const MyMap = (props) => {
   
 
   function fetchTrails(){
-    fetch("/api/trail")
+    fetch("/api/trail",
+    {headers: {
+      'Content-Type': 'application/json'
+    }})
     .then(res =>{
       return res.json()
     })

@@ -48,7 +48,7 @@ module.exports = {
     },
 
     async deleteTrail(req,res){
-        const deleteTrail = await Trail.findByIdAndDelete(params.id)
+        const deleteTrail = await Trail.findByIdAndDelete(req.params.id)
 
         if(!deleteTrail){
             console.log(err)

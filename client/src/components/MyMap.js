@@ -2,9 +2,6 @@ import { useEffect, useState } from 'react'
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import "../styles/Home.css";
-// import express from "express"
-// const router = express.Router()
-var allTrails = [];
 
 
 // useEffect(() => {

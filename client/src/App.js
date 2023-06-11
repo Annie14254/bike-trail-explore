@@ -6,7 +6,7 @@ import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
 import Footer from "./components/Footer";
-
+import {UserProvider} from "./ctx/UserContext"
 
 function App() {
   const [currPage, setCurrPage] = useState("home")
@@ -19,15 +19,17 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <UserProvider>
+        <Header />
 
-      { currPage === `/` && <Home /> }
-      { currPage === '/maps' && <Maps /> }
-      { currPage === '/profile' && <Profile /> }
-      { currPage === '/signup' && <SignUp /> }
-      { currPage === '/login' && <LogIn /> }
-      
-      <Footer />
+        { currPage === `/` && <Home /> }
+        { currPage === '/maps' && <Maps /> }
+        { currPage === '/profile' && <Profile /> }
+        { currPage === '/signup' && <SignUp /> }
+        { currPage === '/login' && <LogIn /> }
+        
+        <Footer />
+      </UserProvider>
     </div>
   );
 }

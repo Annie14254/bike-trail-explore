@@ -48,7 +48,7 @@ module.exports = {
     },
 
     async deleteReview(req,res){
-        const deleteReview = await Review.findByIdAndDelete(params.id)
+        const deleteReview = await Review.findByIdAndDelete(req.params.id)
 
         if(!deleteReview){
             console.log(err)

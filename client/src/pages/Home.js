@@ -8,7 +8,7 @@ import heroImg from "../styles/images/hero.jpg"
 
 const Home = () => {
   return (
-    <div>
+    <div className="master">
       <div className="hero">
         <Image src={heroImg} alt = "An image of a bicycle on its side near a lake" className = "hero-image"fluid />
       </div>

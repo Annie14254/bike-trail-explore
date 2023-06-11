@@ -1,15 +1,13 @@
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #bce1e7 !important;
-  color: #000
-}
-
-.btn-outline-primary {
-  /* background-color: #000 !important; */
-  color: #000
+.master {
+  background-color: #7BAE7F;
 }
 
 .card-body {
-  background-color: #bce1e7;
+  background-color: #493B36;
+}
+
+#card-container {
+  color: #bce1e7;
 }
 
 .card-container {
@@ -33,6 +31,7 @@
   max-height: 400px;
   min-width: 100%;
   max-width: 100%;
+  border-bottom: 10px solid black;
 }
 
 

@@ -1,7 +1,8 @@
 .navbar {
     width: 100%;
     height: 110px;
-    background: #116A7B;
+    background: #493B36;
+    border-bottom: 10px solid black;
   }
   
   .links {
@@ -10,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #bce1e7;
   }
   
   .links:first-child {
@@ -18,7 +19,7 @@
   }
   
   .navbar a {
-    color: white;
+    color: #bce1e7;
     text-decoration: none;
     margin: 20px;
     font-size: 25px;
@@ -39,7 +40,7 @@
     margin-right: 20px;
     background-color: transparent;
     border: none;
-    color: white;
+    color: #bce1e7;
     cursor: pointer;
   }
   

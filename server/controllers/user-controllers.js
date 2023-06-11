@@ -38,7 +38,7 @@ module.exports = {
     async authUser({ body }, res) {
         let user
         try {
-          user = await User.findOne({ email: body.email});
+          user = await User.findOne({ username: body.username});
         } catch(err){
           return res.status(400).json({ message: 'Unable to authenticate user' });
         }
@@ -48,7 +48,7 @@ module.exports = {
         if( !isValid ) return res.status(400).json({ message: 'Unable to authenticate user' });
     
         const token = jwt.sign({
-          email: user.email,
+          username: user.username,
           id: user._id
         }, process.env.JWT_SECRET)
     

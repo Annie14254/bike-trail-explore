@@ -26,7 +26,7 @@ function Form() {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     if (!validateEmail(email) || !userName) {
@@ -43,6 +43,23 @@ function Form() {
       setErrorMessage("Passwords do not match")
       return;
     }
+
+    const resp = await fetch("/api/user/create-user", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        username: userName,
+        password: password
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    
+      const result = await resp
+      console.log(result)
+      document.location.replace("/")
 
 
     setUserName('');

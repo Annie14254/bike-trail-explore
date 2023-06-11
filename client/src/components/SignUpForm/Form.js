@@ -59,7 +59,7 @@ function Form() {
     
       const result = await resp
       console.log(result)
-      document.location.replace("/")
+      document.location.replace("/login")
 
 
     setUserName('');

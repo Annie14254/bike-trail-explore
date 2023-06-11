@@ -15,7 +15,7 @@ function App() {
       setPassword(e.target.value);
     };
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
   
       if (username === 'admin' && password === 'password') {
@@ -24,6 +24,22 @@ function App() {
         // alert('Invalid username or password. Please try again.');
         setErrorMessage('Invalid username or password. Please try again.')
       }
+
+      const resp = await fetch("/api/user/auth", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          password: password
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      const result = await resp
+      console.log(result)
+      document.location.replace("/profile")
+
     };
   
     return (

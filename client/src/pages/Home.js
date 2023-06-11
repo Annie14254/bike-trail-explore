@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Image, Card, Row, Col } from 'react-bootstrap';
 import MyMap from '../components/MyMap'
+import SeededComment from '../components/SeededComment';
 import mapData from '../components/MapData'
 import "../styles/Home.css";
 import heroImg from "../styles/images/hero.jpg"
@@ -34,6 +35,11 @@ const Home = () => {
         <Row className='gy-3 card-container'>
           <MyMap/>
         </Row>
+      </Container>
+      <Container>
+        <Col md={4}>
+          <SeededComment/>
+        </Col>
       </Container>
     </div>
   );

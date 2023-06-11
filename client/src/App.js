@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
 import Footer from "./components/Footer";
+import Comments from "./components/comments/Comments";
 
 
 function App() {
@@ -26,6 +27,13 @@ function App() {
       { currPage === '/profile' && <Profile /> }
       { currPage === '/signup' && <SignUp /> }
       { currPage === '/login' && <LogIn /> }
+
+      <div className="back">
+      <Comments
+        commentsUrl="http://localhost:3001/comments"
+        currentUserId="1"
+      />
+    </div>
       
       <Footer />
     </div>

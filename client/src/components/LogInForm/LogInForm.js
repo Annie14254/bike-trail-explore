@@ -36,8 +36,11 @@ function App() {
         }
       });
 
-      const result = resp
+      const result = await resp.json()
       console.log(result)
+      if( result.status === "success" ){
+        window.location.href = "/profile"
+      }
       // document.location.replace("/")
 
     };

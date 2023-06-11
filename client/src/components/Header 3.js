@@ -20,7 +20,7 @@ export default function Header() {
       <div className="links">
         
         <a href={`/`} id="name" >RideGuide</a>
-        {/* <a href={`/maps`} className="navs">Trail</a> */}
+        <a href={`/maps`} className="navs">Trail</a>
         <a href={`/profile`} className="navs">Profile</a>
         <a href={`/signup`} className="navs">Sign Up</a>
         <a href={`/login`} className="navs">Log In</a>

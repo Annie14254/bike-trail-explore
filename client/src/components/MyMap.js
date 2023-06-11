@@ -2,28 +2,6 @@ import { useEffect, useState } from 'react'
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import "../styles/Home.css";
-// import express from "express"
-// const router = express.Router()
-var allTrails = [];
-
-
-// useEffect(() => {
-//   const fetchBusinesses = () => {
-//      return fetch("theURL", {method: "GET"}
-//   )
-//     .then(res => normalizeResponseErrors(res))
-//     .then(res => {
-//       return res.json();
-//     })
-//     .then(rcvdBusinesses => {
-//       // some stuff
-//     })
-//     .catch(err => {
-//       // some error handling
-//     });
-// };
-// fetchBusinesses();
-// }, []);
 
 const MyMap = (props) => {
 
@@ -33,7 +11,10 @@ const MyMap = (props) => {
   
 
   function fetchTrails(){
-    fetch("/api/trail")
+    fetch("/api/trail",
+    {headers: {
+      'Content-Type': 'application/json'
+    }})
     .then(res =>{
       return res.json()
     })
@@ -56,18 +37,21 @@ const MyMap = (props) => {
 
       return(
         // The actual viewable map
-        <Col md={3}>
-         { trailsList.map( trail => (
-            <Card key={trail._id}>
-              <Card.Img variant="top" src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&center=${trail.lat},${trail.lon}&zoom=12 &path=weight:3%7Ccolor:red%7Cenc:${trail.polyline}&key=AIzaSyDjUvypn2RUsTLSqsK6kOXCuA--8gSQOEc`} />
+        <Col id='card-container'>
+          <div className='card-container'>
+          {trailsList.map(trail => (
+            <Card key={trail._id} className='card'>
+              <Card.Img
+                variant="top"
+                  src={`https://maps.googleapis.com/maps/api/staticmap?size=400x400&center=${trail.lat},${trail.lon}&zoom=12&path=weight:3%7Ccolor:red%7Cenc:${trail.polyline}&key=AIzaSyDjUvypn2RUsTLSqsK6kOXCuA--8gSQOEc`}
+                />
               <Card.Body>
                 <Card.Title>{trail.name}</Card.Title>
-                <Card.Text>
-                  {trail.description}
-                </Card.Text>
+                <Card.Text>{trail.description}</Card.Text>
               </Card.Body>
             </Card>
-         ))}
+            ))}
+          </div>
         </Col>
       )
 

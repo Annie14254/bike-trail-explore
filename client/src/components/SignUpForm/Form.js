@@ -8,6 +8,7 @@ function Form() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPass, setConfirmPass] = useState('');
+  // const [ signupResult, setSignupResult ] = useState("");
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
@@ -44,7 +45,7 @@ function Form() {
       return;
     }
 
-    const resp = await fetch("/api/user/create-user", {
+    const query = await fetch("/api/user/create-user", {
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -56,10 +57,18 @@ function Form() {
       }
     });
 
-    
-      const result = await resp
-      console.log(result)
-      document.location.replace("/login")
+    // if( !query.ok ) {
+    //   setSignupResult("fail")
+    // } else {
+    //   const result = await query.json()
+    //   if( result.status === "success" && result.payload ){
+    //     window.location.href = "/"
+    //   }
+    // }
+
+    const result = await query.json()
+    console.log(result)
+    document.location.replace("/profile")
 
 
     setUserName('');

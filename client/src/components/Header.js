@@ -9,8 +9,9 @@ export default function Header() {
   
   useEffect(() => {
     setDropNav(false);
+    console.log("this one here", currUser)
   }, []);
-
+  
   return (
     <div className="navbar" id={dropNav ? "open" : "close"}>
       <div className="toggleButton">
@@ -24,14 +25,12 @@ export default function Header() {
         <a href={`/`} id="name" >RideGuide</a>
         {/* <a href={`/maps`} className="navs">Trail</a> */}
 
-        { currUser && (
+        { currUser ? (
         <>
           <a href={`/profile`} className="navs">Profile</a>
           <a className="navs" onClick={logout}>Logout</a>
         </>
-        )}  
-
-        { !currUser && (
+        ) : (
         <>
           <a href={`/signup`} className="navs">Sign Up</a>
           <a href={`/login`} className="navs">Log In</a>

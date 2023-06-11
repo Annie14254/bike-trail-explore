@@ -18,12 +18,12 @@ function App() {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      if (username === 'admin' && password === 'password') {
-        setErrorMessage("Login Successful!");
-      } else {
-        // alert('Invalid username or password. Please try again.');
-        setErrorMessage('Invalid username or password. Please try again.')
-      }
+      // if (username === 'admin' && password === 'password') {
+      //   setErrorMessage("Login Successful!");
+      // } else {
+      //   alert('Invalid username or password. Please try again.');
+      //   setErrorMessage('Invalid username or password. Please try again.')
+      // }
 
       const resp = await fetch("/api/user/auth", {
         method: "POST",
@@ -36,9 +36,9 @@ function App() {
         }
       });
 
-      const result = await resp
+      const result = resp
       console.log(result)
-      document.location.replace("/profile")
+      // document.location.replace("/")
 
     };
   

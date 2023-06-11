@@ -57,18 +57,17 @@ function Form() {
       }
     });
 
-    // if( !query.ok ) {
-    //   setSignupResult("fail")
-    // } else {
-    //   const result = await query.json()
-    //   if( result.status === "success" && result.payload ){
-    //     window.location.href = "/"
-    //   }
-    // }
-
     const result = await query.json()
-    console.log(result)
-    document.location.replace("/profile")
+
+    if( result.status !== "success" || !result.payload ) {
+      console.error("fail")
+    } else {
+      document.location.replace("/login")
+    }
+
+    
+    // console.log(result)
+    
 
 
     setUserName('');

@@ -38,7 +38,7 @@ module.exports = {
         res.status(200).json(oneUser)
     },
 
-    async authUser({ body }, res) {
+    async authUser({ body }, res) {  
         let user
         try {
           user = await User.findOne({ username: body.username});
@@ -55,8 +55,9 @@ module.exports = {
           id: user._id
         }, process.env.JWT_SECRET)
     
+        console.log(token)
         const { password, ...modifiedUser } = user;
-        res.cookie("auth-cookie", token).json({ status: "success", payload: modifiedUser })
+        res.cookie("auth-cookie", token).json({ status: "success", test: "test", payload: modifiedUser })
       },
     
     

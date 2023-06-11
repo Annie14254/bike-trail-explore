@@ -3,6 +3,7 @@ const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 // app.use(express.json());
 app.use(bodyParser.json())
 app.use(express.json())
+app.use(cookieParser())
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));

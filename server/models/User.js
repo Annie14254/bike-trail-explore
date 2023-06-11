@@ -24,6 +24,7 @@ userSchema.method("verify", async function(pw){
 
 userSchema.pre("save", async function(next){
   this.password = await bcrypt.hash(this.password, 10)
+  next()
 })
 
 const User = model('User', userSchema);

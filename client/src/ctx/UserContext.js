@@ -21,6 +21,7 @@ export const UserProvider = ({ children }) => {
         });
         const result = await query.json();
         if (result && result.status === "success") {
+        //   console.log(result.payload)
           setCurrUser(result.payload);
         }
       } catch (err) {

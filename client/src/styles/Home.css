@@ -3,7 +3,7 @@
 }
 
 .card-body {
-  background-color: #493B36;
+  background-color: #bce1e7;
 }
 
 #card-container {
@@ -33,6 +33,7 @@
   max-width: 100%;
   border-bottom: 10px solid black;
 }
+
 
 
 @media (max-width: 768px){

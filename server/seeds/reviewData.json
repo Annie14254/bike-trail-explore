@@ -1,14 +1,17 @@
 [
     {
-        "reviewText": "Example1",
+        "reviewAuthor": "User123",
+        "reviewText": "The Sledgehammer trail is very difficult. Be sure to be confident in your handling!",
         "createdAt": "May 1, 2023"
     },
     {
-        "reviewText": "Example2",
+        "reviewAuthor": "User346",
+        "reviewText": "Morningside trail is great for family rides.",
         "createdAt": "Jun 4, 2023"
     },  
     {
-        "reviewText": "Example3",
+        "reviewAuthor": "User789",
+        "reviewText": "Miner's Mountain has some patches that are rough when it rains.",
         "createdAt": "June 6, 2023"
     }
 ]

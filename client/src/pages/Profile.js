@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/profile.css';
 import profilePicture from '../styles/images/fillerbicyclist.jpeg';
 import '../styles/images/mapplaceholderimg.png';
+import { useUserContext } from "../ctx/UserContext";
 
 
 let profilePic = document.getElementById("profile-pic");
@@ -10,6 +11,7 @@ let inputFile = document.getElementById("input-file");
 
 const ProfilePicPicker = () => {
   const [profilePic, setProfilePic] = useState(null);
+  const { currUser } = useUserContext()
 
   const handlePicChange = (event) => {
     const selectedPic = event.target.files[0];
@@ -24,9 +26,8 @@ const ProfilePicPicker = () => {
         <div className="col-sm-6">
           <div className="left">
             <center>
-              <h2 className="pd" id="username">UserName</h2>
-              <h3 className="pd" id="email">Email</h3>
-              <h3 className="pd" id="location">Location</h3>
+              <h2 className="pd" id="username">{currUser?.username}</h2>
+              <h3 className="pd-email" id="email">{currUser?.email}</h3>
               <button id="updateuserinfo">
                 Update User Information
               </button>

@@ -2,13 +2,22 @@ import { useEffect, useState } from 'react'
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import "../styles/Home.css";
+import { useUserContext } from '../ctx/UserContext';
 
 const SeededComment = (props) => {
 
+  const { currUser } = useUserContext()
   const [ reviewList, setReviewList ] = useState([])
-  // maybe: set every prop in URL
-  // const [imgSrc, setImgSrc] = useState("")
+  const [reviewBody, setReviewBody] = useState('')
   
+  const handleReviewChange = (e) => {
+    setReviewBody(e.target.value)
+  }
+
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    createReview()
+  }
 
   function fetchReview(){
     fetch("/api/review")
@@ -19,6 +28,20 @@ const SeededComment = (props) => {
       setReviewList(data)
     })
     .catch(err => console.log(err.message))
+  }
+
+  function createReview(){
+    fetch("/api/review", {
+        method: "POST",
+        body: JSON.stringify({
+            reviewAuthor: currUser.username,
+            reviewText: reviewBody
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          }
+    })
+
   }
 
   useEffect(() => {
@@ -32,16 +55,30 @@ const SeededComment = (props) => {
 
       return(
         <>
-        {reviewList?.map(review => (
-            <Card key = {review?._id} className='comment-card'>
-                <Card.Body className='card-content'>
-                    <Card.Title className='card-content'>User</Card.Title>
-                    <Card.Text>Created at: {review?.createdAt}</Card.Text>
-                    <Card.Text>{review?.reviewText}</Card.Text>
-                </Card.Body>
-            </Card>
-        
-        ))}
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input
+                type="textarea"
+                placeholder="Add a Review"
+                value={reviewBody}
+                onChange={handleReviewChange}
+                required
+                />
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        <div>
+            {reviewList?.map(review => (
+                <Card key = {review?._id} className='comment-card'>
+                    <Card.Body className='card-content'>
+                        <Card.Title className='card-content'>{review?.reviewAuthor}</Card.Title>
+                        <Card.Text>Created at: {review?.createdAt}</Card.Text>
+                        <Card.Text>{review?.reviewText}</Card.Text>
+                    </Card.Body>
+                </Card>
+            
+            ))}
+        </div>
         </>
       )
   

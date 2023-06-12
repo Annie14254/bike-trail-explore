@@ -26,8 +26,8 @@ const ProfilePicPicker = () => {
         <div className="col-sm-6">
           <div className="left">
             <center>
-              <h2 className="pd" id="username">{currUser.username}</h2>
-              <h3 className="pd" id="email">{currUser.email}</h3>
+              <h2 className="pd" id="username">{currUser?.username}</h2>
+              <h3 className="pd-email" id="email">{currUser?.email}</h3>
               <button id="updateuserinfo">
                 Update User Information
               </button>

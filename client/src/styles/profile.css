@@ -50,6 +50,11 @@ main {
     padding:15px;
 }
 
+.pd-email{
+    padding:15px;
+    font-size:20px;
+}
+
 .favoritetrails {
     border-bottom: 1px solid black;
 }

@@ -10,7 +10,7 @@ module.exports = {
             return res.status(400).json({message: "Could not create new review"})
         }
         console.log(newReview)
-        res.status(200).json(sample)
+        res.status(200).json("success")
     },
 
     async getAllReviews(req, res) {

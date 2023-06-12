@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import "../styles/Home.css";
+import "../styles/comment.css";
 import { useUserContext } from '../ctx/UserContext';
 
 const SeededComment = (props) => {
@@ -16,7 +16,8 @@ const SeededComment = (props) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    createReview()
+    createReview();
+    document.location.reload()
   }
 
   function fetchReview(){
@@ -69,7 +70,7 @@ const SeededComment = (props) => {
         </div>
         <div>
             {reviewList?.map(review => (
-                <Card key = {review?._id} className='comment-card'>
+                <Card key = {review?._id} id='comment-card'>
                     <Card.Body className='card-content'>
                         <Card.Title className='card-content'>{review?.reviewAuthor}</Card.Title>
                         <Card.Text>Created at: {review?.createdAt}</Card.Text>

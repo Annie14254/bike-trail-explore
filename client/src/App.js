@@ -30,12 +30,12 @@ function App() {
         { currPage === '/signup' && <SignUp /> }
         { currPage === '/login' && <LogIn /> }
         
-        <div className="back">
+        {/* <div className="back">
         <Comments
           commentsUrl="http://localhost:3001/comments"
           currentUserId="1"
         />
-      </div>
+      </div> */}
         
         <Footer />
       </UserProvider>

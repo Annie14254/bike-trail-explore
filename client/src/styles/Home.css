@@ -3,7 +3,7 @@
 }
 
 .card-body {
-  background-color: #493B36;
+  background-color: #bce1e7;
 }
 
 #card-container {
@@ -34,13 +34,7 @@
   border-bottom: 10px solid black;
 }
 
-.comment-card{
 
-  width:4000px;
-  align-content:start;
-  color:white;
-  background-color: bisque;
-}
 
 @media (max-width: 768px){
   .card{

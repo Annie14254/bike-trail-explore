@@ -3,6 +3,7 @@ import "../styles/Header.css";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useUserContext } from "../ctx/UserContext";
 
+
 export default function Header() {
   const [dropNav, setDropNav] = useState(false);
   const { currUser, logout } = useUserContext()
@@ -23,7 +24,6 @@ export default function Header() {
       <div className="links">
         
         <a href={`/`} id="name" >RideGuide</a>
-        {/* <a href={`/maps`} className="navs">Trail</a> */}
 
         { currUser ? (
         <>

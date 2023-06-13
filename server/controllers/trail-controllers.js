@@ -58,8 +58,4 @@ module.exports = {
         console.log(deleteTrail)
         res.status(200).json({message:"Successfully deleted trail"})
       }
-
-
-//   create controller routes for update and delete
 };
-

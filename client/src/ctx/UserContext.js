@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 
+
 const UserContext = createContext({});
 
 export const useUserContext = () => useContext(UserContext);
@@ -21,7 +22,6 @@ export const UserProvider = ({ children }) => {
         });
         const result = await query.json();
         if (result && result.status === "success") {
-        //   console.log(result.payload)
           setCurrUser(result.payload);
         }
       } catch (err) {
@@ -40,7 +40,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     console.log("verifying user");
     verifyUser();
-  }, [window.location.href]);
+  },[]);
 
   return (
     <UserContext.Provider value={{ currUser, logout }}>

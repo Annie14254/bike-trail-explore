@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, Image, Card, Row, Col } from 'react-bootstrap';
+import { Container, Image, Row, Col } from 'react-bootstrap';
 import MyMap from '../components/MyMap'
 import SeededComment from '../components/SeededComment';
-import mapData from '../components/MapData'
 import "../styles/Home.css";
 import heroImg from "../styles/images/hero.jpg"
 import { useUserContext } from "../ctx/UserContext";
@@ -32,6 +31,5 @@ const Home = () => {
     </div>
   );
 };
-
 
 export default Home;

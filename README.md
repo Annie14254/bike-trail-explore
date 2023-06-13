@@ -9,7 +9,7 @@
 * [Screenshots of webpage](#screenshots-of-webpage)
 
 ## Project description
-- Welcome to Ride Guide! A bike trail application that shows you various different biking trails around you. Whether you're trying to go for a casual ride or seeking an adrenaline rush, then Ride Guide is the app for you! Aside being able to see various different trails, as long as you're logged in you can leave your own reviews on each trail for all others to see aswell. Lastly if you're logged in you can also create a profile page listing off some of your favorite trails!
+- Welcome to Ride Guide! A bike trail application that shows you various different bike trails around you. Whether you're trying to go for a casual ride or seeking an adrenaline rush, then Ride Guide is the app for you! Aside being able to see various different trails, as long as you're logged in you can view and edit your profile aswell as be able to leave a comment/review of your favorite trail at the bottom of the home page.
 
 ## Team members
 - Annie, Peter, Tyler, Nawal, Alex, & Linkin
@@ -18,6 +18,14 @@
 - https://bike-trail-explore-grp-1.herokuapp.com/
 
 ## Screenshots of webpage
-![Screenshot of home page]()
-![Screenshot of home page]()
-![Screenshot of home page]()
+![Screenshot of home page](./client/src/styles/images/Screenshot%202023-06-13%20031242.png)
+- 
+![Screenshot of home page](./client/src/styles/images/Screenshot%202023-06-13%20031453.png)
+- E
+![Screenshot of home page](./client/src/styles/images/Screenshot%202023-06-13%20031025.png)
+- 
+![Screenshot of home page](./client/src/styles/images/Screenshot%202023-06-13%20031136.png)
+- 
+![Screenshot of home page](./client/src/styles/images/Screenshot%202023-06-13%20031217.png)
+- 
+![Screenshot of home page](./client/src/styles/images/Screenshot%202023-06-13%20031343.png)

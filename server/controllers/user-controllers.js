@@ -58,7 +58,6 @@ module.exports = {
       process.env.JWT_SECRET
     );
 
-    //console.log(token)
     const { password, ...modifiedUser } = user;
     res
       .cookie("auth-cookie", token)
@@ -77,8 +76,6 @@ module.exports = {
 
     return res.status(200).json({ status: "success", payload: user });
   },
-
-  //   create controller routes for update and delete
 
   async updateUser(req, res) {
     const updateUser = await User.findOneAndUpdate(

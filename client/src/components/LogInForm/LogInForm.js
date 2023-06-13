@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import '../../styles/LogIn.css'
+import '../../styles/loginSignUp.css'
+
 
 function App() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage] = useState('');
 
   
     const handleUsernameChange = (e) => {
@@ -17,13 +18,6 @@ function App() {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
-      // if (username === 'admin' && password === 'password') {
-      //   setErrorMessage("Login Successful!");
-      // } else {
-      //   alert('Invalid username or password. Please try again.');
-      //   setErrorMessage('Invalid username or password. Please try again.')
-      // }
 
       const resp = await fetch("/api/user/auth", {
         method: "POST",
@@ -41,29 +35,27 @@ function App() {
       if( result.status === "success" ){
         window.location.href = "/profile"
       }
-      // document.location.replace("/")
-
     };
   
     return (
-      <div className="container">
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
+      <div className="signUpForm">
+        <h1 className="title">Login</h1>
+        <form className="form" onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="username"
             value={username}
             onChange={handleUsernameChange}
             required
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="password"
             value={password}
             onChange={handlePasswordChange}
             required
           />
-          <button type="submit">Login</button>
+          <button className="button" type="submit">Login</button>
         </form>
         {errorMessage && (
         <div>

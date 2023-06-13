@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { checkPassword, validateEmail } from "../../utils/helpers.js";
-import "../../styles/SignUp.css";
+import '../../styles/loginSignUp.css'
 
 
 function Form() {
@@ -8,7 +8,6 @@ function Form() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPass, setConfirmPass] = useState('');
-  // const [ signupResult, setSignupResult ] = useState("");
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
@@ -65,10 +64,6 @@ function Form() {
       document.location.replace("/login")
     }
 
-    
-    // console.log(result)
-    
-
 
     setUserName('');
     setPassword('');
@@ -78,8 +73,8 @@ function Form() {
   
   
   return (
-    <div className="container">
-      <p className="title">Welcome to Ride Guide, please sign up to be able to leave reviews and comments on trails!</p>
+    <div className="signUpForm">
+      <h1 className="title">Sign Up</h1>
       <form className="form">
         <input
           value={email}
@@ -109,7 +104,7 @@ function Form() {
           type="password"
           placeholder="confirm password"
         />
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
+        <button className="button" type="button" onClick={handleFormSubmit}>Submit</button>
       </form>
       {errorMessage && (
         <div>
@@ -119,6 +114,5 @@ function Form() {
     </div>
   )  
 }
-
 
 export default Form;

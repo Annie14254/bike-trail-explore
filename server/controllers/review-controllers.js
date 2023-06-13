@@ -58,6 +58,4 @@ module.exports = {
         console.log(deleteReview)
         res.status(200).json({message:"Successfully deleted review"})
       }
-
-//   create controller routes for update and delete
 };

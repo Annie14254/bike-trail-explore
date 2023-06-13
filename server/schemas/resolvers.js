@@ -1,5 +1,3 @@
-
-
 const { User, Trail, Review } = require('../models')
 
 const resolvers = {

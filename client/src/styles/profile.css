@@ -1,88 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 :root {
     --brown:#493B36;
-
 }
-
-body {
-    margin:0;
-    padding:0;
-}
-h2 #userName {
-    font-size:2.5rem;
-    margin-top:0;
-    padding-top:15px;
-    font-weight:bold;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-h3 {
-    font-size: 2rem;
-}
-main {
-    border-bottom: 1px solid black;
-}
-/* textarea {
-    max-height:10rem;
-    width:90%;
-    max-width:95%;
-} */
-.userPic {
-    height:10em;
-    width:10em;
-    border-radius: 50%;
-    margin-top:15px;
-}
+  
 .left {
-    border-bottom: 10px solid #493B36;
-    /* border-right: 1px solid #493B36; */
-    background-color:#7BAE7F;
+    background-color: #BCE1E7;
+    border: 10px solid black;
     height:23rem;
-    border-radius:15px;
 }
+
 .right {
-    border-bottom: 10px solid #493B36;
-    /* border-left:1px solid black; */
     background-color: #BCE1E7;
     height:23rem;
-    border-radius: 15px;
+    border: 10px solid black;
 }
+
 .pd {
-    padding:15px;
+    padding-top: 60px;
 }
 
 .pd-email{
-    padding:15px;
-    font-size:20px;
+    padding: 50px;
+    font-size: 20px;
 }
 
-.favoritetrails {
-    border-bottom: 1px solid black;
-}
-.test {
-    border:1px solid black;
-}
-.map {
-    /* min-height: 100%; */
-    padding:0;
-    width:100%;  
-}
-.fillerImg {
-    width:100%;
-    height:80%;
-    border-bottom:10px solid #493B36;
-}
 #updateuserinfo {
-    margin-bottom:3rem;
-    background-color: lightblue;
-    border-color: black;
-    border-radius:15px;
-    color:white;
-    padding:10px 15px;
-    font-weight:bold;
+    background-color: #493B36;
+    border: 5px solid black;
+    color: #BCE1E7;
+    padding: 10px 15px;
+    font-weight: bold;
 }
-#updateuserinf:active {
-    background-color: lime;
-}
+
 #updateuserinfo:hover {
-    background-color: blue;
+    background-color: #74645f;
 }

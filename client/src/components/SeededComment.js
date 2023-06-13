@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import "../styles/comment.css";
 import { useUserContext } from '../ctx/UserContext';
+
 
 const SeededComment = (props) => {
 
@@ -58,14 +59,14 @@ const SeededComment = (props) => {
         <>
         <div>
             <form onSubmit={handleSubmit}>
-                <input
+                <input className='reviewPost'
                 type="textarea"
                 placeholder="Add a Review"
                 value={reviewBody}
                 onChange={handleReviewChange}
                 required
                 />
-                <button type="submit">Post</button>
+                <button className="rvwBtn" type="submit">Post</button>
             </form>
         </div>
         <div>
